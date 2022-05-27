@@ -1,0 +1,107 @@
+
+/* #05386b #5cdb95 #501b1d #8ee4af*/
+*{
+    font-family:'Segoe UI';
+}
+
+body{
+    background-color: #2b6777;
+}
+
+header{
+    background-color: white;
+}
+
+
+h1, th{
+    color: #2b6777;
+    text-align: center;
+}
+
+td{
+    color: black;
+    text-align: center;
+}
+
+a:hover{
+    color: black;
+    cursor:pointer;
+}
+
+a{
+    color: #2b6777;
+    transition: 0.3s;
+    
+}
+
+.outer-link{
+    color: white;
+    transition: 0.3s
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border: #c8d8e4 5px solid;
+    border-radius: 10px;
+    padding: 5px 5px;
+    border-spacing: 5px;
+    box-shadow: 5px 5px 14px #152238;
+}
+
+
+.formsection{
+    margin:auto;
+    width:max-content;
+    border: #c8d8e4 5px solid;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: justify;
+    box-shadow: 5px 5px 14px #152238;
+    color: #2b6777;
+    background-color: #ffffff;
+}
+
+.center-elements{
+    text-align: center;
+}
+
+label{
+    display: table-cell;
+    text-align: left;
+    color: #2b6777;
+}
+
+input{
+    border: 2px solid #c8d8e4;
+    border-radius: 2px;
+    transition: 0.6s;
+}
+
+input:focus{
+    border: 2px solid black;
+}
+
+input[type=text], input[type=password]{
+    width: 200px;
+}
+input[type=number]{
+    cursor:n-resize;
+    width: 50px;
+}
+input[type=submit]{
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border: #2b6777 1px solid;
+    border-radius: 7px;
+    color:#2b6777;
+    font-weight: bold;
+    padding: 6px 10px;
+    margin: 5px 12px;
+}
+input[type=submit]:hover{
+    color: #ffffff;
+    border: black 1px solid;
+    background-color: #2b6777;
+}

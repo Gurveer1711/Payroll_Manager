@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel = "stylesheet" th:href = "@{/css/styles.css}"/>
+</head>
+<body><header>
+<h1>Root Page</h1>
+</header>
+<div class = "formsection">
+<h3>Owner</h3>
+<a th:href="@{/addEmployee}">Add Employee</a><br>
+<a th:href="@{/viewEmployees}">View Employee Records</a><br><br>
+<br>
+<h3>Employee</h3>
+<a th:href="@{/viewEmployee}">View Your Records</a>
+<div sec:authorize="isAuthenticated()">
+
+User's name: <span sec:authentication="name"></span><br><br>
+Roles: <span sec:authentication="principal.authorities"></span><br><br>
+<div class = "center-elements">
+<form method="post" th:action="@{/logout}">
+<input type="submit" value="logout">
+<br><br>
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>

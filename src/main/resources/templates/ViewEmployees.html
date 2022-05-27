@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel = "stylesheet" th:href = "@{/css/styles.css}"/>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<header>
+<h1>View Employees</h1>
+</header>
+<table>
+<tr>
+<th>Name</th>
+<th>Employee ID</th>
+<th>Sunday Hours</th>
+<th>Monday Hours</th>
+<th>Tuesday Hours</th>
+<th>Wednesday Hours</th>
+<th>Thursday Hours</th>
+<th>Friday Hours</th>
+<th>Saturday Hours</th>
+<th>Wage</th>
+<th>Average</th>
+<th>Total Hours</th>
+<th>Total Pay</th>
+</tr>
+<tr th:each="employee: ${employees}" th:style="${employee.getTotal}>40 ? 'background-color: #D3D3D3' : 'background-color: white'">
+<td th:text="${employee.name}"></td>
+<td th:text="${employee.emp_id}"></td>
+<td th:text="${employee.su_hr}"></td>
+<td th:text="${employee.mo_hr}"></td>
+<td th:text="${employee.tu_hr}"></td>
+<td th:text="${employee.we_hr}"></td>
+<td th:text="${employee.th_hr}"></td>
+<td th:text="${employee.fr_hr}"></td>
+<td th:text="${employee.sa_hr}"></td>
+<td th:text="${employee.wage}"></td>
+<td th:text="${employee.getAverage()}"></td>
+<td th:text="${employee.getTotal()}"></td>
+<td th:text="${employee.getPay()}"></td>
+
+<td><a th:href="@{/edit/{id} (id=${employee.id})}">EDIT</a></td>
+<td><a th:href="@{/delete/{id}(id=${employee.id})}">DELETE</a></td>
+</tr>
+</table>
+<br>
+<div class = "center-elements">
+<a class="outer-link" th:href="@{/addEmployee}">Add Employee</a><br>
+<a class="outer-link" th:href="@{/}">Home Page</a><br>
+<form method="post" th:action="@{/logout}">
+<input type="submit" value="logout"></div>
+</body>
+</html>
